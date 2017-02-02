@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ENGINE>
+	<DEVICE
+		name="devD3D"
+		adapter="0"
+		backGdCol="R100G100B100A255"
+		devType="HAL"
+		width="1680"
+		height="1050"
+		backFmt="A8R8G8B8"
+		backCount="1"
+		multiSpl="4"
+		swapEffc="DISCARD"
+		beWindow="true"
+		enableAutoDepth="true"
+		autoDepthFmt="D24S8"
+		flags="0"
+		fullScnRefsRate="0"
+		presInterval="IMMEDIATE"
+		setCurrent="true" />
+	
+	<GUI
+		enableControlIO="true"
+		showWorldCoordinateSys="false"
+		showLightLocation="false" />
+		
+	<SCENE
+		name="mainScn"
+		setCurrent="true">
+		
+		<EFFECT id="AMBIENT_LGT" enable="true"
+			lgtCol="R255G255B255A255" />
+		<EFFECT id="SHOW_EDGE" enable="true" />
+		<EFFECT id="Z_DEPTH" enable="true" />
+		
+		<CAMERA
+			name="camProj"
+			locEye="X200Y200Z200H1"
+			locTgt="X0Y0Z0H1"
+			viewWid="1680"
+			viewHgt="1050"
+			clsProjPln="1"
+			farProjPln="10000"
+			setOperation="true" />
+		
+		<LIGHT
+			lgtTyp="SPOT"
+			lgtDif="R255G255B255A255"
+			lgtAmb="R255G255B255A255"
+			lgtSpc="R255G255B255A255"
+			lgtPos="X0Y100Z0H1"
+			lgtDir="X0Y-1Z0H1"
+			lgtID="0"
+			enable="true" />
+			
+		<MODEL
+			mdlFile="abc.txt"
+			mtlDif0="R150G255B100A255" />
+			
+		<!--<MODEL
+			mdlName="log_birch">
+			
+			<SUBSET
+				mdlName="box_front"
+				poiLT="X30Y30Z30H1"
+				poiRT="X-30Y30Z30H1"
+				poiLB="X30Y-30Z30H1"
+				poiRB="X-30Y-30Z30H1"
+				mtlDif0="R255G255B255A255"
+				difTex0="log_birch.png" />
+				
+			<SUBSET
+				mdlName="box_back"
+				poiLT="X-30Y30Z-30H1"
+				poiRT="X30Y30Z-30H1"
+				poiLB="X-30Y-30Z-30H1"
+				poiRB="X30Y-30Z-30H1"
+				mtlDif1="R255G255B255A255"
+				difTex1="log_birch.png" />
+				
+			<SUBSET
+				mdlName="box_left"
+				poiLT="X30Y30Z-30H1"
+				poiRT="X30Y30Z30H1"
+				poiLB="X30Y-30Z-30H1"
+				poiRB="X30Y-30Z30H1"
+				mtlDif2="R255G255B255A255"
+				difTex2="log_birch.png" />
+				
+			<SUBSET
+				mdlName="box_right"
+				poiLT="X-30Y30Z30H1"
+				poiRT="X-30Y30Z-30H1"
+				poiLB="X-30Y-30Z30H1"
+				poiRB="X-30Y-30Z-30H1"
+				mtlDif3="R255G255B255A255"
+				difTex3="log_birch.png" />
+				
+			<SUBSET
+				mdlName="box_top"
+				poiLT="X30Y30Z-30H1"
+				poiRT="X-30Y30Z-30H1"
+				poiLB="X30Y30Z30H1"
+				poiRB="X-30Y30Z30H1"
+				mtlDif4="R255G255B255A255"
+				difTex4="log_birch_top.png" />
+				
+			<SUBSET
+				mdlName="box_bottom"
+				poiLT="X30Y-30Z30H1"
+				poiRT="X-30Y-30Z30H1"
+				poiLB="X30Y-30Z-30H1"
+				poiRB="X-30Y-30Z-30H1"
+				mtlDif5="R255G255B255A255"
+				difTex5="log_birch_top.png" />
+		</MODEL>
+		
+		<MODEL
+			mdlName="boxOutSrd"
+			boxLTF="X30Y30Z30H1"
+			boxRBB="X-30Y-30Z-30H1"
+			mtlDif0="R0G0B0A255"
+			vtxCol="R0G0B0A255"
+			wireFrame="true" />-->
+			
+	</SCENE>
+</ENGINE>

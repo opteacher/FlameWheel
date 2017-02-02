@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FW_20150515", "FW_20150515\FW_20150515.vcxproj", "{C70E0337-CC67-4DC3-916F-48FDE7331BC9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86F93028-6928-4CA8-8256-4073FEBF039D} = {86F93028-6928-4CA8-8256-4073FEBF039D}
+		{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A} = {B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2} = {C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FWMain", "FWMain\FWMain.vcxproj", "{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86F93028-6928-4CA8-8256-4073FEBF039D} = {86F93028-6928-4CA8-8256-4073FEBF039D}
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2} = {C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OPMath", "OPMath\OPMath.vcxproj", "{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OPTools", "OPTools\OPTools.vcxproj", "{86F93028-6928-4CA8-8256-4073FEBF039D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4} = {9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "tinyxml\tinyxml.vcxproj", "{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C70E0337-CC67-4DC3-916F-48FDE7331BC9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C70E0337-CC67-4DC3-916F-48FDE7331BC9}.Debug|Win32.Build.0 = Debug|Win32
+		{C70E0337-CC67-4DC3-916F-48FDE7331BC9}.Release|Win32.ActiveCfg = Release|Win32
+		{C70E0337-CC67-4DC3-916F-48FDE7331BC9}.Release|Win32.Build.0 = Release|Win32
+		{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}.Debug|Win32.Build.0 = Debug|Win32
+		{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}.Release|Win32.ActiveCfg = Release|Win32
+		{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}.Release|Win32.Build.0 = Release|Win32
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}.Debug|Win32.Build.0 = Debug|Win32
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}.Release|Win32.ActiveCfg = Release|Win32
+		{C0E9CED8-B3DB-4FB1-8385-240ED9E3E8A2}.Release|Win32.Build.0 = Release|Win32
+		{86F93028-6928-4CA8-8256-4073FEBF039D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86F93028-6928-4CA8-8256-4073FEBF039D}.Debug|Win32.Build.0 = Debug|Win32
+		{86F93028-6928-4CA8-8256-4073FEBF039D}.Release|Win32.ActiveCfg = Release|Win32
+		{86F93028-6928-4CA8-8256-4073FEBF039D}.Release|Win32.Build.0 = Release|Win32
+		{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}.Debug|Win32.Build.0 = Debug|Win32
+		{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}.Release|Win32.ActiveCfg = Release|Win32
+		{9DBE0DFB-AA2F-494A-9C01-C05BFF2940B4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

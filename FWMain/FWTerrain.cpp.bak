@@ -1,0 +1,236 @@
+protected:
+	struct SFWTglInf
+	{
+		typedef std::pair<SFWTglInf*, UINT> PrAdj;
+		enum EFWAdjEdg
+		{
+			ADJ_NULL,
+			ADJ_LEFT,
+			ADJ_RIGHT,
+			ADJ_BOTTOM
+		};
+		// PrAdj( NULL, ADJ_NULL)
+		static const PrAdj s_cprNoTgl;
+
+		SFWTglInf():
+			m_poiTop(0), m_poiLft(0),
+			m_poiRgt(0), m_poiCen(0),
+			m_pLftSub(NULL), m_pRgtSub(NULL),
+			m_pTglBas(NULL), m_bSplit(false)	{}
+
+		// Three vertexes' index
+		WORD m_poiTop, m_poiLft, m_poiRgt, m_poiCen;
+			
+		// Adjacent edges triangles
+		//+_+: second: defined which edge triangle(not self) adj
+		PrAdj m_tglLftAdj, m_tglRgtAdj, m_tglBtmAdj;
+
+		// Base triangle
+		SFWTglInf* m_pTglBas;
+		// Sub triangle
+		SFWTglInf* m_pLftSub;
+		SFWTglInf* m_pRgtSub;
+		
+		// Whether be split
+		bool m_bSplit;
+
+		// Vertex array
+		static std::vector<SFWVertex> s_ayVtxs;
+	};
+	typedef SFWTglInf::EFWAdjEdg EFWAdjEdg;
+	typedef SFWTglInf::PrAdj PrAdj;
+	
+const CFWTerrain::SFWTglInf::PrAdj CFWTerrain::SFWTglInf::s_cprNoTgl( NULL, ADJ_NULL);
+std::vector<SFWVertex> CFWTerrain::SFWTglInf::s_ayVtxs = std::vector<SFWVertex>();
+
+bool CFWTerrain::splitTgl( SFWTglInf* pTglI, bool bFocSplI)
+{
+	if(pTglI == NULL)	{ return false; }
+	if(pTglI->m_bSplit)	{ return true; }
+
+	// Collect data for checking split
+	SFWVertex vtxLft = SFWTglInf::s_ayVtxs[pTglI->m_poiLft];
+	CPoint poiLft = CPoint( vtxLft.x, vtxLft.y, vtxLft.z);
+	SFWVertex vtxRgt = SFWTglInf::s_ayVtxs[pTglI->m_poiRgt];
+	CPoint poiRgt = CPoint( vtxRgt.x, vtxRgt.y, vtxRgt.z);
+	SFWVertex vtxTop = SFWTglInf::s_ayVtxs[pTglI->m_poiTop];
+	CPoint poiTop = CPoint( vtxTop.x, vtxTop.y, vtxTop.z);
+
+	// All three vertex are out of the view cone,
+	// don't needs build the terrain
+	//if(!pvt_cnView.isInside(poiLft)
+	//&& !pvt_cnView.isInside(poiRgt)
+	//&& !pvt_cnView.isInside(poiTop))	{ return false; }
+
+	// Get distance between top point and eye location
+	float fDisVw = CVector( poiTop, pvt_posEye).getVecLen();
+	// Get triangle's bottom length
+	float fLenEdg = CVector( poiLft, poiRgt).getVecLen();
+	// Get center point on the bottom edge
+	CPoint poiCen = (poiLft + poiRgt)*.5;
+	// Get height from height map
+	float fMaxHgt = 0, fMinHgt = 0;
+	poiTop.m_fY = getHgtByLoc(poiTop);
+	if(poiTop.m_fY > fMaxHgt)	{ fMaxHgt = poiTop.m_fY; }
+	if(poiTop.m_fY < fMinHgt)	{ fMinHgt = poiTop.m_fY; }
+	poiLft.m_fY = getHgtByLoc(poiLft);
+	if(poiLft.m_fY > fMaxHgt)	{ fMaxHgt = poiLft.m_fY; }
+	if(poiLft.m_fY < fMinHgt)	{ fMinHgt = poiLft.m_fY; }
+	poiRgt.m_fY = getHgtByLoc(poiRgt);
+	if(poiRgt.m_fY > fMaxHgt)	{ fMaxHgt = poiRgt.m_fY; }
+	if(poiRgt.m_fY < fMinHgt)	{ fMinHgt = poiRgt.m_fY; }
+	poiCen.m_fY = getHgtByLoc(poiCen);
+	if(poiCen.m_fY > fMaxHgt)	{ fMaxHgt = poiCen.m_fY; }
+	if(poiCen.m_fY < fMinHgt)	{ fMinHgt = poiCen.m_fY; }
+	// Calculate waviness degree with the top and bottom center
+	float fWavDeg = abs(fMaxHgt - fMinHgt);
+
+	// Check whether need to split(L / (D*R*C1*C2) < 1)
+	if((fDisVw / (fLenEdg*fWavDeg*pvt_fC1*pvt_fC2)) < 1 || bFocSplI)
+	{
+		if(!bFocSplI)	{ ++g_iNumSplit; }
+
+		// Add the center point into vertex array
+		SFWTglInf* pTglAdj = pTglI->m_tglBtmAdj.first;
+		if(pTglAdj != NULL && pTglAdj->m_bSplit)
+		{
+			pTglI->m_poiCen = pTglAdj->m_poiCen;
+		}
+		else
+		{
+			pTglI->m_poiCen = SFWTglInf::s_ayVtxs.size();
+			SFWTglInf::s_ayVtxs.push_back(SFWVertex(poiCen));
+		}
+
+		// Split the triangle
+		pTglI->m_bSplit = true;
+		pTglI->m_pLftSub = new SFWTglInf();
+		pTglI->m_pLftSub->m_pTglBas = pTglI;
+		pTglI->m_pLftSub->m_poiTop = pTglI->m_poiCen;
+		pTglI->m_pLftSub->m_poiLft = pTglI->m_poiTop;
+		pTglI->m_pLftSub->m_poiRgt = pTglI->m_poiLft;
+		if(pTglI->m_tglLftAdj.first != NULL && pTglI->m_tglLftAdj.first->m_bSplit)
+		{
+			SFWTglInf* pLftAdj = pTglI->m_tglLftAdj.first;
+			pTglI->m_pLftSub->m_tglBtmAdj = PrAdj( pLftAdj->m_pRgtSub, EFWAdjEdg::ADJ_BOTTOM);
+			pLftAdj->m_pRgtSub->m_tglBtmAdj = PrAdj( pTglI->m_pLftSub, EFWAdjEdg::ADJ_BOTTOM);
+		}
+		else
+		{
+			pTglI->m_pLftSub->m_tglBtmAdj = pTglI->m_tglLftAdj;
+		}
+
+		pTglI->m_pRgtSub = new SFWTglInf();
+		pTglI->m_pRgtSub->m_pTglBas = pTglI;
+		pTglI->m_pRgtSub->m_poiTop = pTglI->m_poiCen;
+		pTglI->m_pRgtSub->m_poiLft = pTglI->m_poiRgt;
+		pTglI->m_pRgtSub->m_poiRgt = pTglI->m_poiTop;
+		if(pTglI->m_tglRgtAdj.first != NULL && pTglI->m_tglRgtAdj.first->m_bSplit)
+		{
+			SFWTglInf* pRgtAdj = pTglI->m_tglRgtAdj.first;
+			pTglI->m_pRgtSub->m_tglBtmAdj = PrAdj( pRgtAdj->m_pLftSub, EFWAdjEdg::ADJ_BOTTOM);
+			pRgtAdj->m_pLftSub->m_tglBtmAdj = PrAdj( pTglI->m_pRgtSub, EFWAdjEdg::ADJ_BOTTOM);
+		}
+		else
+		{
+			pTglI->m_pRgtSub->m_tglBtmAdj = pTglI->m_tglRgtAdj;
+		}
+
+		pTglI->m_pLftSub->m_tglLftAdj = PrAdj( pTglI->m_pRgtSub, EFWAdjEdg::ADJ_RIGHT);
+		pTglI->m_pRgtSub->m_tglRgtAdj = PrAdj( pTglI->m_pLftSub, EFWAdjEdg::ADJ_LEFT);
+
+		// Check and split bottom adjacent triangle
+		if(pTglI->m_tglBtmAdj.first)
+		{
+			if(!splitBtmAdj(pTglI))
+			{
+				pTglI->m_bSplit = false;
+				SAFE_DELETE(pTglI->m_pLftSub);
+				SAFE_DELETE(pTglI->m_pRgtSub);
+				return false;
+			}
+		}
+
+		if(!bFocSplI)
+		{
+			// Split subset
+			if(!splitTgl(pTglI->m_pLftSub))	{ return false; }
+			if(!splitTgl(pTglI->m_pRgtSub))	{ return false; }
+		}
+	}
+
+	return true;
+}
+
+bool CFWTerrain::splitBtmAdj(SFWTglInf* pTglI)
+{
+	SFWTglInf* pAdjTgl = pTglI->m_tglBtmAdj.first;
+	if(pAdjTgl == NULL)	{ return false; }
+	switch (pTglI->m_tglBtmAdj.second)
+	{
+	case EFWAdjEdg::ADJ_BOTTOM:
+		if(pAdjTgl->m_bSplit)
+		{
+			// Relate the sub triangle's LR adjacent
+			pTglI->m_pLftSub->m_tglRgtAdj = PrAdj( pAdjTgl->m_pRgtSub, EFWAdjEdg::ADJ_LEFT);
+			pTglI->m_pRgtSub->m_tglLftAdj = PrAdj( pAdjTgl->m_pLftSub, EFWAdjEdg::ADJ_RIGHT);
+			pAdjTgl->m_pRgtSub->m_tglLftAdj = PrAdj( pTglI->m_pLftSub, EFWAdjEdg::ADJ_RIGHT);
+			pAdjTgl->m_pLftSub->m_tglRgtAdj = PrAdj( pTglI->m_pRgtSub, EFWAdjEdg::ADJ_LEFT);
+			return true;
+		}
+		else
+		{
+			// Forced split the adjacent triangle
+			return splitTgl( pAdjTgl, true);
+		}
+	case EFWAdjEdg::ADJ_LEFT:
+		if(splitTgl( pAdjTgl, true))
+		{
+			return splitTgl( pAdjTgl->m_pLftSub, true);
+		}
+	case EFWAdjEdg::ADJ_RIGHT:
+		if(splitTgl( pAdjTgl, true))
+		{
+			return splitTgl( pAdjTgl->m_pRgtSub, true);
+		}
+	}
+	return false;
+}
+
+float CFWTerrain::getHgtByLoc(CPoint poiI)
+{
+	UINT uHgtWid = (UINT)(poiI.m_fX + ptd_fLength*.5) * ptd_prTrnHgt.first;
+	UINT uHgtHgt = (UINT)(poiI.m_fZ + ptd_fWidth*.5) * ptd_prTrnHgt.second;
+	if(uHgtWid == ptd_uHgtWid)	{ --uHgtWid; }
+	if(uHgtHgt == ptd_uHgtHgt)	{ --uHgtHgt; }
+	DWORD dwLocHgt = uHgtHgt*ptd_uHgtWid + uHgtWid;
+	if(dwLocHgt > ptd_ayHgt.size())
+	{
+		throw std::runtime_error("Error member: error rate of Terrain to Height");
+	}
+	return ptd_ayHgt[dwLocHgt];
+}
+
+std::vector<WORD> CFWTerrain::buildIdxByTgl(SFWTglInf* pTglI)
+{
+	vector<WORD> ayIdxs;
+	if(pTglI == NULL)	{ return ayIdxs; }
+
+	if(!pTglI->m_bSplit)
+	{
+		ayIdxs.push_back(pTglI->m_poiLft);
+		ayIdxs.push_back(pTglI->m_poiTop);
+		ayIdxs.push_back(pTglI->m_poiRgt);
+		return ayIdxs;
+	}
+	else
+	{
+		vector<WORD> aySub;
+		aySub = buildIdxByTgl(pTglI->m_pLftSub);
+		std::copy( aySub.begin(), aySub.end(), std::back_inserter(ayIdxs));
+		aySub = buildIdxByTgl(pTglI->m_pRgtSub);
+		std::copy( aySub.begin(), aySub.end(), std::back_inserter(ayIdxs));
+	}
+
+	return ayIdxs;
+}

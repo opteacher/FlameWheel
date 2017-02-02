@@ -1,0 +1,65 @@
+﻿生成启动时间为 2015/7/17 0:27:51。
+     1>项目“C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\FWMain\FWMain.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D FWMAIN_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\FWMain.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt FWPrim.cpp
+         FWPrim.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\FWMain.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\FWMain.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\FWMain.lib" /MACHINE:X86 /DLL Debug\dllmain.obj
+         Debug\FWAABBBox.obj
+         Debug\FWCamera.obj
+         Debug\FWCamFcty.obj
+         Debug\FWCamFree.obj
+         Debug\FWCamIntf.obj
+         Debug\FWColor.obj
+         Debug\FWCoord.obj
+         Debug\FWD3DMisc.obj
+         Debug\FWDevice.obj
+         Debug\FWDevIntf.obj
+         Debug\FWEffAdvBd.obj
+         Debug\FWEffAlpha.obj
+         Debug\FWEffAmbLgt.obj
+         Debug\FWEffZDepth.obj
+         Debug\FWEffIntf.obj
+         Debug\FWEffMngr.obj
+         Debug\FWEffShwEdg.obj
+         Debug\FWEngine.obj
+         Debug\FWDevFcty.obj
+         Debug\FWExpParse.obj
+         Debug\FWGuiMngr.obj
+         Debug\FWIntf.obj
+         Debug\FWLgtFcty.obj
+         Debug\FWLgtIntf.obj
+         Debug\FWLight.obj
+         Debug\FWMaterial.obj
+         Debug\FWMatrix.obj
+         Debug\FWMdlMngr.obj
+         Debug\FWMesh.obj
+         Debug\FWMisc.obj
+         Debug\FWModel.obj
+         Debug\FWMshFcty.obj
+         Debug\FWMshIntf.obj
+         Debug\FWNode.obj
+         Debug\FWParam.obj
+         Debug\FWRigid.obj
+         Debug\FWPool.obj
+         Debug\FWPrim.obj
+         Debug\FWQuate.obj
+         Debug\FWScene.obj
+         Debug\FWScnMngr.obj
+         Debug\FWSkin.obj
+         Debug\FWSknFcty.obj
+         Debug\FWSknIntf.obj
+         Debug\FWSpace.obj
+         Debug\FWSpcFcty.obj
+         Debug\FWSpcIntf.obj
+         Debug\FWTerrain.obj
+         Debug\FWText2D.obj
+         Debug\FWTxtFcty.obj
+         Debug\FWTxtIntf.obj
+         Debug\stdafx.obj
+         FWMain.vcxproj -> C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\FWMain.dll
+     1>已完成生成项目“C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\FWMain\FWMain.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.50

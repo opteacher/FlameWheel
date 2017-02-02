@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ENGINE>
+	<DEVICE
+		name="devD3D"
+		adapter="0"
+		backGdCol="R100G100B100A255"
+		devType="HAL"
+		width="1680"
+		height="1050"
+		backFmt="A8R8G8B8"
+		backCount="1"
+		multiSpl="4"
+		swapEffc="DISCARD"
+		beWindow="true"
+		enableAutoDepth="true"
+		autoDepthFmt="D24S8"
+		flags="0"
+		fullScnRefsRate="0"
+		presInterval="IMMEDIATE"
+		setCurrent="true" />
+	
+	<GUI
+		enableControlIO="true"
+		showWorldCoordinateSys="false"
+		showLightLocation="false" />
+		
+	<!--<SCENE
+		name="mainScn"
+		setCurrent="true">
+		
+		<EFFECT id="AMBIENT_LGT" enable="true"
+			lgtCol="R255G255B255A255" />
+		<EFFECT id="SHOW_EDGE" enable="false" />
+		<EFFECT id="Z_DEPTH" enable="true" />
+		
+		<CAMERA
+			name="camProj"
+			locEye="X150Y80Z150H1"
+			locTgt="X0Y0Z0H1"
+			viewWid="1680"
+			viewHgt="1050"
+			clsProjPln="1"
+			farProjPln="1000"
+			setOperation="true" />
+		
+		<LIGHT
+			lgtTyp="SPOT"
+			lgtDif="R255G255B255A255"
+			lgtAmb="R255G255B255A255"
+			lgtSpc="R255G255B255A255"
+			lgtPos="X0Y100Z0H1"
+			lgtDir="X0Y-1Z0H1"
+			lgtID="0"
+			enable="true" />
+			
+		<MODEL
+			plnLength="500"
+			plnWidth="500"
+			plnLenSec="1"
+			plnWidSec="1"
+			lock="true"
+			vtxCol="R255G0B0A255"
+			mtlDif="R100G200B100A255" />
+			
+		<MODEL
+			boxLTF="X10Y10Z10H1"
+			boxRBB="X-10Y-10Z-10H1"
+			vtxCol="R255G0B0A255"
+			mtlDif="R255G255B255A255"
+			spcPos="X0Y200Z0H1"
+			difTex="jiyan.jpg"
+			mass="20" />
+			
+	</SCENE>-->
+</ENGINE>

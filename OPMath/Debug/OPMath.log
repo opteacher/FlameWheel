@@ -1,0 +1,42 @@
+﻿生成启动时间为 2015/7/16 12:20:03。
+     1>项目“C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\OPMath\OPMath.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BoxAABB.cpp Cone.cpp Coord.cpp Line2D.cpp LnEqua.cpp Math.cpp Matrix.cpp Plane.cpp Point.cpp Polyg2D.cpp Ray.cpp Rect.cpp Vector.cpp
+         BoxAABB.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         Vector.cpp
+         Rect.cpp
+         Ray.cpp
+         Polyg2D.cpp
+         Point.cpp
+         Plane.cpp
+         Matrix.cpp
+         Math.cpp
+         LnEqua.cpp
+         Line2D.cpp
+         Coord.cpp
+         Cone.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\OPMath.lib" /NOLOGO Debug\BoxAABB.obj
+         Debug\Cone.obj
+         Debug\Coord.obj
+         Debug\Line2D.obj
+         Debug\LnEqua.obj
+         Debug\Math.obj
+         Debug\Matrix.obj
+         Debug\Plane.obj
+         Debug\Point.obj
+         Debug\Polyg2D.obj
+         Debug\Ray.obj
+         Debug\Rect.obj
+         Debug\Rigid.obj
+         Debug\Sphere.obj
+         Debug\Triangle.obj
+         Debug\Vector.obj
+         OPMath.vcxproj -> C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\Debug\OPMath.lib
+     1>已完成生成项目“C:\Users\OP\documents\visual studio 2012\Projects\FW_20150515\OPMath\OPMath.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.76

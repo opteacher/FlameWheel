@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B167BD84-C4B1-4255-A1F6-F0CC3AC8C28A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>FWMain</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FWMAIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FWMAIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FWCamera.h" />
+    <ClInclude Include="FWCamIntf.h" />
+    <ClInclude Include="FWColor.h" />
+    <ClInclude Include="FWD3DMisc.h" />
+    <ClInclude Include="FWDaeParse.h" />
+    <ClInclude Include="FWDevice.h" />
+    <ClInclude Include="FWDevIntf.h" />
+    <ClInclude Include="FWEffect.h" />
+    <ClInclude Include="FWEffIntf.h" />
+    <ClInclude Include="FWEngine.h" />
+    <ClInclude Include="FWExpParse.h" />
+    <ClInclude Include="FWFactory.h" />
+    <ClInclude Include="FWIntf.h" />
+    <ClInclude Include="FWLgtIntf.h" />
+    <ClInclude Include="FWLight.h" />
+    <ClInclude Include="FWMacro.h" />
+    <ClInclude Include="FWManager.h" />
+    <ClInclude Include="FWMaterial.h" />
+    <ClInclude Include="FWMesh.h" />
+    <ClInclude Include="FWMisc.h" />
+    <ClInclude Include="FWModel.h" />
+    <ClInclude Include="FWMshIntf.h" />
+    <ClInclude Include="FWNode.h" />
+    <ClInclude Include="FWObject.h" />
+    <ClInclude Include="FWParam.h" />
+    <ClInclude Include="FWPool.h" />
+    <ClInclude Include="FWScene.h" />
+    <ClInclude Include="FWSkin.h" />
+    <ClInclude Include="FWSknIntf.h" />
+    <ClInclude Include="FWSpace.h" />
+    <ClInclude Include="FWSpcIntf.h" />
+    <ClInclude Include="FWTerrain.h" />
+    <ClInclude Include="FWText.h" />
+    <ClInclude Include="FWTxtIntf.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FWAABBBox.cpp" />
+    <ClCompile Include="FWCamera.cpp" />
+    <ClCompile Include="FWCamFcty.cpp" />
+    <ClCompile Include="FWCamFree.cpp" />
+    <ClCompile Include="FWCamIntf.cpp" />
+    <ClCompile Include="FWColor.cpp" />
+    <ClCompile Include="FWCoord.cpp" />
+    <ClCompile Include="FWD3DMisc.cpp" />
+    <ClCompile Include="FWDaeParse.cpp" />
+    <ClCompile Include="FWDevice.cpp" />
+    <ClCompile Include="FWDevIntf.cpp" />
+    <ClCompile Include="FWEffAdvBd.cpp" />
+    <ClCompile Include="FWEffAlpha.cpp" />
+    <ClCompile Include="FWEffAmbLgt.cpp" />
+    <ClCompile Include="FWEffZDepth.cpp" />
+    <ClCompile Include="FWEffIntf.cpp" />
+    <ClCompile Include="FWEffMngr.cpp" />
+    <ClCompile Include="FWEffShwEdg.cpp" />
+    <ClCompile Include="FWEngine.cpp" />
+    <ClCompile Include="FWDevFcty.cpp" />
+    <ClCompile Include="FWExpParse.cpp" />
+    <ClCompile Include="FWGuiMngr.cpp" />
+    <ClCompile Include="FWIntf.cpp" />
+    <ClCompile Include="FWLgtFcty.cpp" />
+    <ClCompile Include="FWLgtIntf.cpp" />
+    <ClCompile Include="FWLight.cpp" />
+    <ClCompile Include="FWMaterial.cpp" />
+    <ClCompile Include="FWMatrix.cpp" />
+    <ClCompile Include="FWMdlMngr.cpp" />
+    <ClCompile Include="FWMesh.cpp" />
+    <ClCompile Include="FWMisc.cpp" />
+    <ClCompile Include="FWModel.cpp" />
+    <ClCompile Include="FWMshFcty.cpp" />
+    <ClCompile Include="FWMshIntf.cpp" />
+    <ClCompile Include="FWNode.cpp" />
+    <ClCompile Include="FWParam.cpp" />
+    <ClCompile Include="FWRigid.cpp" />
+    <ClCompile Include="FWPool.cpp" />
+    <ClCompile Include="FWPrim.cpp" />
+    <ClCompile Include="FWQuate.cpp" />
+    <ClCompile Include="FWScene.cpp" />
+    <ClCompile Include="FWScnMngr.cpp" />
+    <ClCompile Include="FWSkin.cpp" />
+    <ClCompile Include="FWSknFcty.cpp" />
+    <ClCompile Include="FWSknIntf.cpp" />
+    <ClCompile Include="FWSpace.cpp" />
+    <ClCompile Include="FWSpcFcty.cpp" />
+    <ClCompile Include="FWSpcIntf.cpp" />
+    <ClCompile Include="FWTerrain.cpp" />
+    <ClCompile Include="FWText2D.cpp" />
+    <ClCompile Include="FWTxtFcty.cpp" />
+    <ClCompile Include="FWTxtIntf.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

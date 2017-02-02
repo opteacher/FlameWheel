@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\FWObjects">
+      <UniqueIdentifier>{9df89be0-0491-4f9d-a366-b31cf47da294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FWInterfaces">
+      <UniqueIdentifier>{a448bb2e-7915-474c-a706-ea83d62be60d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FWNodes">
+      <UniqueIdentifier>{d06b134e-d7f2-480a-bd63-7c9cf12dee96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWObject">
+      <UniqueIdentifier>{15813dd5-1c85-450c-bd2b-5a3298ac495f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWInterfaces">
+      <UniqueIdentifier>{1caf8dfe-627f-4d86-90a9-6b76a190c163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWNode">
+      <UniqueIdentifier>{181e3966-82aa-43dd-b3f2-2e8c45d69223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWFactory">
+      <UniqueIdentifier>{58bbdd63-c1c8-40fb-8b1d-dc1605c6ccaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWManager">
+      <UniqueIdentifier>{b31c0952-04f1-4d0b-af10-e0ea39dbb3a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWEngine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWCamera.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWDevice.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWEffect.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWLight.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWMesh.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWObject.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWSkin.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWCamIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWDevIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWLgtIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWMshIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWSknIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWEffIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWNode.h">
+      <Filter>头文件\FWNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="FWModel.h">
+      <Filter>头文件\FWNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="FWScene.h">
+      <Filter>头文件\FWNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="FWD3DMisc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWExpParse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWMacro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWMisc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWSpace.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWSpcIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWTerrain.h">
+      <Filter>头文件\FWNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="FWColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FWIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWText.h">
+      <Filter>头文件\FWObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FWTxtIntf.h">
+      <Filter>头文件\FWInterfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="FWDaeParse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEngine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWPool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWParam.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWD3DMisc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWExpParse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWCamera.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWCamFree.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffAmbLgt.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffShwEdg.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWDevice.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWLight.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMesh.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWPrim.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSkin.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWCamIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWDevIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWLgtIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMshIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSknIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWNode.cpp">
+      <Filter>源文件\FWNode</Filter>
+    </ClCompile>
+    <ClCompile Include="FWScene.cpp">
+      <Filter>源文件\FWNode</Filter>
+    </ClCompile>
+    <ClCompile Include="FWModel.cpp">
+      <Filter>源文件\FWNode</Filter>
+    </ClCompile>
+    <ClCompile Include="FWCamFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWDevFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWLgtFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMshFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSknFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffMngr.cpp">
+      <Filter>源文件\FWManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FWGuiMngr.cpp">
+      <Filter>源文件\FWManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMdlMngr.cpp">
+      <Filter>源文件\FWManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FWScnMngr.cpp">
+      <Filter>源文件\FWManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffAdvBd.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffZDepth.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWEffAlpha.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSpace.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSpcFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWSpcIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMisc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWTerrain.cpp">
+      <Filter>源文件\FWNode</Filter>
+    </ClCompile>
+    <ClCompile Include="FWQuate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWCoord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWMatrix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWAABBBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FWRigid.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWText2D.cpp">
+      <Filter>源文件\FWObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FWTxtIntf.cpp">
+      <Filter>源文件\FWInterfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="FWTxtFcty.cpp">
+      <Filter>源文件\FWFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FWDaeParse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
